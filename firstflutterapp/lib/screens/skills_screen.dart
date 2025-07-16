@@ -3,12 +3,24 @@ import '../widgets/nav_drawer.dart';
 
 class SkillsScreen extends StatelessWidget {
   final List<String> skills = [
-    'Flutter',
-    'Dart',
-    'Firebase',
-    'UI/UX Design',
-    'Git',
-  ];
+  'Svelte & SvelteKit',
+  'Java',
+  'React.js',
+  'Tailwind CSS',
+  'JavaScript',
+  'Flutter (Beginner)',
+  'Dart (Beginner)',
+  'Git & GitHub',
+  'Zod Validation',
+  'Google OAuth (Lucia)',
+  'Data curation',
+  'FastAPI',
+  'MongoDB',
+  'Docker',
+  'UI/UX Implementation',
+  'API Integration',
+];
+
 
   @override
   Widget build(BuildContext context) {

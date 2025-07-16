@@ -6,6 +6,8 @@ class ContactScreen extends StatelessWidget {
   final String linkedInUrl =
       'https://www.linkedin.com/in/kaviya-m-366268252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app';
 
+  final String githubUrl = 'https://github.com/Kaviyamurugadass';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,21 +21,67 @@ class ContactScreen extends StatelessWidget {
             Text('Email: kaviya@example.com'),
             SizedBox(height: 8),
             InkWell(
-              child: Text(
-                'LinkedIn: $linkedInUrl',
-                style: TextStyle(
-                  color: Colors.indigo,
-                  decoration: TextDecoration.underline,
-                ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.add_circle_outline,
+                    color: Colors.black,
+                  ), // LinkedIn icon substitute
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'LinkedIn: $linkedInUrl',
+                      style: TextStyle(
+                        color: Colors.indigo,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               onTap: () async {
                 final uri = Uri.parse(linkedInUrl);
-                if (await canLaunchUrl(uri)) {
+                try {
                   await launchUrl(uri, mode: LaunchMode.externalApplication);
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Could not open the link.')),
+                  );
                 }
               },
-            ),          
-            ],
+            ),
+            SizedBox(height: 8),
+            InkWell(
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.code,
+                    color: Colors.black,
+                  ), // GitHub icon substitute
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'GitHub: $githubUrl',
+                      style: TextStyle(
+                        color: Colors.indigo,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () async {
+                final uri = Uri.parse(githubUrl);
+                try {
+                  await launchUrl(uri, mode: LaunchMode.externalApplication);
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Could not open the link.')),
+                  );
+                }
+              },
+            ),
+          ],
         ),
       ),
     );
