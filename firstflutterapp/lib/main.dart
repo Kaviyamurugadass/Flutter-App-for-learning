@@ -1,49 +1,27 @@
-import 'package:flutter/material.dart'; // Import the Flutter Material package
+import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
+import 'screens/about_screen.dart';
+import 'screens/skills_screen.dart';
+import 'screens/contact_screen.dart';
 
-void main() => runApp(MyApp()); // The main function is the entry point of the app
-//runApp is a function that takes a widget and makes it the root of the widget tree
-//MaterialApp is a widget that provides material design styling to the app
-//Scaffold is a widget that provides a basic structure for the app, including an app bar and body
+void main() => runApp(MyPortfolioApp());
 
-class StateWidgetSample extends StatelessWidget{ // StatelessWidget is a widget that does not have mutable state(Not change)
-  @override
-  Widget build(BuildContext context) { // build is a method that describes the part of the user interface represented by this widget
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text("Stateless Widget"),
-        ),
-      ),
-    );
-  }
-}
-
-class MyApp extends StatefulWidget { // StatefulWidget is a widget that has mutable state(change over time)
-  @override
-  MyAppState createState() => MyAppState(); // createState is a method that creates the mutable state for this widget
-}
-
-class MyAppState extends State<MyApp>{ // _MyAppState is the state class for MyApp, it extends State<MyApp>
-  String text = "Hello, Flutter!";
+class MyPortfolioApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:Scaffold(
-        body:Column(children: [
-          Text("Stateful Widget"),
-          MaterialButton(onPressed: () {
-            print(text);
-            setState(() { // setState is a method that tells the framework that the internal state of this object has changed
-                text = "Button Clicked!";
-            });
-            print(text);
-
-          },
-          child: Text(text),
-          color: Colors.blue,)
-        ],)
-      )
+      title: 'Personal Portfolio',
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/about': (context) => AboutScreen(),
+        '/skills': (context) => SkillsScreen(),
+        '/contact': (context) => ContactScreen(),
+      },
     );
   }
-  
 }
