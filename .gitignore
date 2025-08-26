@@ -1,2 +1,12 @@
 firstflutterapp/lib/screeens/Oracle_JDK-24/bin/api-ms-win-core-console-l1-1-0.dll
 firstflutterapp/lib/screeens/Oracle_JDK-24/bin/api-ms-win-core-datetime-l1-1-0.dll
+
+mydashatar/.metadata
+mydashatar/.packages
+mydashatar/.dart_tool/
+mydashatar/ios/Runner
+mydashatar/ios/Flutter/AppFrameworkInfo.plist
+mydashatar/web/icons/
+mydashatar/android/app/src/main/res/mipmap-*
+mydashatar/android/app/src/main/res/drawable-*
+mydashatar/macos/Runner/Assets.xcassets/AppIcon.appiconset/

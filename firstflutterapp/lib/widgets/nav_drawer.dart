@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: [
+    return Drawer( // Use a Drawer widget to create a navigation drawer
+      child: ListView( // Use ListView to make the drawer scrollable
+        children: [ 
           DrawerHeader(
             decoration: BoxDecoration(color: Colors.indigo),
             child: Text(
@@ -13,7 +13,7 @@ class NavDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),
-          ListTile(
+          ListTile( // Add ListTile widgets for navigation
             leading: Icon(Icons.home),
             title: Text('Home'),
             onTap: () => Navigator.pushReplacementNamed(context, '/'),
